@@ -4,12 +4,12 @@ egl-wrapper is a library which can be used to hook into EGL API calls.
 callbacks can be registered for each of the supported calls.
 The default behavior is to forward calls directly to the system's EGL.
 
-# Building
+## Building
 
 This should build on Linux (tested) and possibly Android (untested)
 using straightforward CMake.
 
-# Usage
+## Usage
 
 Create your own library which links to libegl-wrapper.so. In your 
 library, you can define hooks into EGL API calls. For example:
@@ -53,3 +53,11 @@ If you compile this into a shared library and make a client load it
 
 See the `slow_render` example in the `examples` folder for a buildable
 example.
+
+## Status
+
+This code has so far hardly been used or tested. Only the given `slow_render`
+example was tested on Arch Linux on `es2gears`. However, that shows the 
+working principle. It should be easy to use this for more complex tasks,
+making minor changes to `egl-wrapper` if needed (e.g. for any missing API
+call).
